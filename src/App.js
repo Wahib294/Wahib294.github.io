@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <button onClick={() => setcheck(check - 1)}>-</button>
       <span>{check}</span>
+      <span>{prevcheck}</span>
       <button onClick={() => setcheck(check + 1)}>+</button>
     </div>
   );
