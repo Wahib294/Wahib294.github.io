@@ -4,13 +4,12 @@ import React, { useState } from 'react';
 
 function App() {
 
-  const [check, setcheck] = useState(0)
+  const [check, setCheck] = useState(0)
   return (
     <div className="App">
-      <button onClick={() => setcheck(check - 1)}>-</button>
+      <button onClick={setCheck(prevCheck => prevCheck - 1)}>-</button>
       <span>{check}</span>
-      <span>{prevcheck}</span>
-      <button onClick={() => setcheck(check + 1)}>+</button>
+      <button onClick={setCheck(prevCheck => prevCheck + 1)}>+</button>
     </div>
   );
 }
