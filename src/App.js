@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
        <button onClick={decrement}>-</button>
-      <span>{check}</span>
+      <h1>{check}</h1>
       <button onClick={increment}>+</button>
     </div>
   );
