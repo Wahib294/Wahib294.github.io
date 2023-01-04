@@ -2,14 +2,24 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 
-function App() {
+function checkfirst() {
+  console.log('checkfirst')
+  return 0
+}
 
-  const [check, setCheck] = useState(0)
+function App() {
+  function decrement() {
+    setCheck(prevCheck => prevCheck - 1)
+  }
+  function increment() {
+    setCheck(prevCheck => prevCheck + 1)
+  }
+  const [check, setCheck] = useState(checkfirst())
   return (
     <div className="App">
-      <button onClick={setCheck(prevCheck => prevCheck - 1)}>-</button>
+       <button onClick={decrement}>-</button>
       <span>{check}</span>
-      <button onClick={setCheck(prevCheck => prevCheck + 1)}>+</button>
+      <button onClick={increment}>+</button>
     </div>
   );
 }
