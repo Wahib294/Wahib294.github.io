@@ -1,10 +1,13 @@
 import styles from "../styles/Layout.module.css";
-
+import Nav from "./Nav";
 const Layout = ({ children }) => {
   return (
-    <div>
-      <main className={styles.main}>{children}</main>
-    </div>
+    <>
+      <Nav />
+      <div>
+        <main className={styles.main}>{children}</main>
+      </div>
+    </>
   );
 };
 export default Layout;
