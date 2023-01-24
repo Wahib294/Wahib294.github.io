@@ -7,9 +7,7 @@ function App() {
   return (
     <div className="App">
       Abdul Wahib
-      <button onClick={increment}>+</button>
       {rating[0]}
-      <button onClick={decrement}>-</button>
     </div>
   );
 }
