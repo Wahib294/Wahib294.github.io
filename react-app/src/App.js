@@ -1,11 +1,22 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes, BrowserRouter } from "react-router-dom";
+import "./login";
 function App() {
   return (
-    <>
-      <Link to="/login">Login</Link>
-      <div>Abdul Wahib</div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Link to="/login">Login</Link>
+              <div>Abdul Wahib</div>
+            </>
+          }
+        />
+        <Route path="/login" element={<div>Login</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
