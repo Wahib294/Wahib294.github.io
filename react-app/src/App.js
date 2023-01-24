@@ -12,7 +12,6 @@ function App() {
           element={
             <>
               <Link to="/login">Login</Link>
-              <div>Abdul Wahib</div>
               <AsyncAwait />
             </>
           }
