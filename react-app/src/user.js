@@ -16,10 +16,10 @@ const AsyncAwait = () => {
     <div class="names">
       {users.map((user) => {
         return (
-          <div>
+          <center>
             <h1>{user.name}</h1>
             <h3>{user.rating}</h3>
-          </div>
+          </center>
         );
       })}
     </div>
