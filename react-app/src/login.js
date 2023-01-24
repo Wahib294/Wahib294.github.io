@@ -1,4 +1,4 @@
-export const login = () => {
+function login() {
   return (
     <div>
       <h1>Login</h1>
@@ -13,4 +13,5 @@ export const login = () => {
       </form>
     </div>
   );
-};
+}
+export default login;
