@@ -8,10 +8,21 @@ const AsyncAwait = () => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await getDocs(usersCollectionRef);
-      console.log(response);
+      setUsers(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
     };
     getUsers();
   }, []);
-  return <p>K</p>;
+  return (
+    <div class="names">
+      {users.map((user) => {
+        return (
+          <div>
+            <h1>{user.name}</h1>
+            <h3>{user.rating}</h3>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 export default AsyncAwait;
