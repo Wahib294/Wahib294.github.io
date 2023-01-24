@@ -1,20 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { db } from "./firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const AsyncAwait = () => {
-  const response = fetch(
-    "https://chess-70d1d-default-rtdb.asia-southeast1.firebasedatabase.app/user.json"
-  );
-  const data = response.json();
-  return (
-    <div>
-      {data.length > 0 && (
-        <ul>
-          {data.map((user) => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+  const [users, setUsers] = useState([]);
+  const usersCollectionRef = collection(db, "users");
+  useEffect(() => {
+    const getUsers = async () => {
+      const response = await getDocs(usersCollectionRef);
+      console.log(response);
+    };
+    getUsers();
+  }, []);
+  return <p>K</p>;
 };
 export default AsyncAwait;
