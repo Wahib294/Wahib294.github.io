@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link, Route, Routes, BrowserRouter } from "react-router-dom";
 import LoginPage from "./login";
+import AsyncAwait from "./user";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
             <>
               <Link to="/login">Login</Link>
               <div>Abdul Wahib</div>
+              <AsyncAwait />
             </>
           }
         />

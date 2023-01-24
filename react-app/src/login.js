@@ -4,10 +4,10 @@ const LoginPage = () => {
     <>
       <h1>Login</h1>
       <form action="/index">
-        <label>Name</label>
+        <label>Name : </label>
         <input type="text" name="name" id="name" />
         <br />
-        <label>Password</label>
+        <label>Password : </label>
         <input type="text" name="pass" id="pass" />
         <br />
         <input type="submit" value="Login" />
