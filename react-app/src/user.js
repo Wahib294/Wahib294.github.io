@@ -17,8 +17,9 @@ const AsyncAwait = () => {
       {users.map((user) => {
         return (
           <center>
-            <h1>{user.name}</h1>
-            <h1>{user.rating}</h1>
+            <h1>
+              {user.name} : {user.rating}
+            </h1>
           </center>
         );
       })}
