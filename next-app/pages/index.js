@@ -20,7 +20,7 @@ export default function Home() {
       <Head>
         <title>Next App</title>
       </Head>
-      <h1>{collection}</h1>
+      <h1>Welcome to NEXT</h1>
     </div>
   );
 }
