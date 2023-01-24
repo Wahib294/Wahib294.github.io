@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import "./login";
+
 var rating = Array(5).fill(500);
 
 function App() {
