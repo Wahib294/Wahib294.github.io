@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const { MongoClient, ServerApiVersion } = require("mongodb");
+import { MongoClient, ServerApiVersion } from "mongodb";
 const uri =
   "mongodb+srv://wahib:<password>@cluster0.waqyd8i.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
