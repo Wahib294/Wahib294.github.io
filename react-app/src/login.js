@@ -1,7 +1,7 @@
 import React from "react";
-const login = () => {
+const LoginPage = () => {
   return (
-    <div>
+    <>
       <h1>Login</h1>
       <form action="/index">
         <label>Name</label>
@@ -12,7 +12,7 @@ const login = () => {
         <br />
         <input type="submit" value="Login" />
       </form>
-    </div>
+    </>
   );
 };
-export default login;
+export default LoginPage;

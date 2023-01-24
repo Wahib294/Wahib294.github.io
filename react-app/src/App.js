@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, Route, Routes, BrowserRouter } from "react-router-dom";
-import login from "./login";
+import LoginPage from "./login";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
             </>
           }
         />
-        <Route path="login" element={<login />} />
+        <Route path="login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
