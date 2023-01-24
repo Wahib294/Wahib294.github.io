@@ -5,7 +5,7 @@ const AsyncAwait = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://chess-70d1d-default-rtdb.asia-southeast1.firebasedatabase.app/user.json"
+      "https://chess-70d1d-default-rtdb.asia-southeast1.firebasedatabase.app/user"
     );
     const data = await response.json();
     setUsers(data);
