@@ -17,6 +17,7 @@ function App() {
           }
         />
         <Route path="login" element={<LoginPage />} />
+        <Route path="edit" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );

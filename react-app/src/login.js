@@ -3,7 +3,7 @@ const LoginPage = () => {
   return (
     <>
       <h1>Login</h1>
-      <form action="/index">
+      <form action="/edit">
         <label>Name : </label>
         <input type="text" name="name" id="name" />
         <br />
