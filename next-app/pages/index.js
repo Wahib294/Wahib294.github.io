@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { MongoClient, ServerApiVersion } from "mongodb";
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri =
