@@ -6,7 +6,7 @@ var rating = Array(5).fill(500);
 function App() {
   return (
     <>
-      <login></login>
+      <a href="/login">Login</a>
       <div className="App">
         Abdul Wahib
         {rating[0]}
