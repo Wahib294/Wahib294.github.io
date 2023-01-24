@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 function App() {
   return (
     <>
-      <Link to="./login">Login</Link>
+      <Link href="./login">Login</Link>
       <div>Abdul Wahib</div>
     </>
   );
