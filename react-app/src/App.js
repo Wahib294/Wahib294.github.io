@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link, Route, Routes, BrowserRouter } from "react-router-dom";
-import "./login";
+import login from "./login";
+
 function App() {
   return (
     <BrowserRouter>
