@@ -1,14 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-
+import "./login";
 var rating = Array(5).fill(500);
 
 function App() {
   return (
-    <div className="App">
-      Abdul Wahib
-      {rating[0]}
-    </div>
+    <>
+      <login></login>
+      <div className="App">
+        Abdul Wahib
+        {rating[0]}
+      </div>
+    </>
   );
 }
 
