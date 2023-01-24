@@ -7,7 +7,7 @@ const AsyncAwait = () => {
   const usersCollectionRef = collection(db, "users");
   useEffect(() => {
     const getUsers = async () => {
-      const response = await getDocs(usersCollectionRef);
+      const data = await getDocs(usersCollectionRef);
       setUsers(data.docs.map((docs) => ({ ...docs.data(), id: docs.id })));
     };
     getUsers();
