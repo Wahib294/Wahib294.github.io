@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-rating = 34;
+var rating = 34;
 
 function App() {
   return <div className="App">Abdul Wahib {rating}</div>;
