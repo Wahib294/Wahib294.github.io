@@ -18,7 +18,7 @@ const AsyncAwait = () => {
         return (
           <center>
             <h1>{user.name}</h1>
-            <h3>{user.rating}</h3>
+            <h1>{user.rating}</h1>
           </center>
         );
       })}
