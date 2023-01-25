@@ -1,10 +1,6 @@
 import React from "react";
 var name;
 var pass;
-
-var getUser = () => {
-  return name;
-};
 function check() {
   name = document.getElementById("name").value;
   pass = document.getElementById("pass").value;

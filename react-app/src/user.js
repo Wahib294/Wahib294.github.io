@@ -27,3 +27,5 @@ const AsyncAwait = () => {
   );
 };
 export default AsyncAwait;
+
+// Get all the users from the database and return them  in div class="names"
