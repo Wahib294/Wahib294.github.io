@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import axios from "axios";
 import { Context } from "../context/contextAPI";
 import LeftNav from "./LeftNav";
 import VideoCard from "./VideoCard";
@@ -7,14 +6,15 @@ import Login from "./Login";
 
 const Feed = () => {
   const { loading, searchResults } = useContext(Context);
-  const { setSelectedCategory } = useContext(Context);
+  const { selectedcategory, setSelectedCategory } = useContext(Context);
   const { modal } = useContext(Context);
-  const { users, setUsers } = useContext(Context);
-  
+
   useEffect(() => {
     document.getElementById("root").classList.remove("custom-h");
-    setSelectedCategory("Home");
-  }, []);
+    if (selectedcategory === "New") {
+      setSelectedCategory("Home");
+    }
+  });
 
   return (
     <>
@@ -31,9 +31,7 @@ const Feed = () => {
           </div>
         </div>
       </div>
-      {modal && (
-        <Login/>
-      )}
+      {modal && <Login />}
     </>
   );
 };

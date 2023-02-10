@@ -13,18 +13,23 @@ const options = {
 
 export const fetchDatafromApi = async (url) => {
   const data = await axios.get(`${BASE_URL}/${url}`, options);
+  console.log(data);
   return data;
 };
 export const fetchUsers = async () => {
   const user = await axios.get(
-    "https://63e64d4fc8839ccc28557489.mockapi.io/users"
+    "https://xjobu5x2vcoxyaebh6mqg6tsnq0tyrfs.lambda-url.ap-northeast-1.on.aws"
   );
+  console.log(user.data);
   return user.data;
 };
 
-export const userlogin = () => {
-  fetchUsers().then((data) => {
-    console.log(data);
-    console.log("SIGN IN PRESSED");
-  });
+export const fetchPlaylist = async (id) => {
+  const playlist = await axios.get(
+    "https://xjobu5x2vcoxyaebh6mqg6tsnq0tyrfs.lambda-url.ap-northeast-1.on.aws/?userid=" +
+      id
+  );
+  console.log("AWS");
+  console.log(playlist.data);
+  return playlist.data;
 };

@@ -10,7 +10,8 @@ export const AppContext = (props) => {
   const [selectedCategory, setSelectedCategory] = useState("Home");
   const [mobileMenu, setMobileMenu] = useState(false);
   const [modal, setModal] = useState(false);
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
+  const [userLogin, setUserLogin] = useState(false);
 
   useEffect(() => {
     if (selectedCategory === "Home") {
@@ -24,7 +25,6 @@ export const AppContext = (props) => {
     setLoading(true);
     fetchDatafromApi(`search/?q=${query}`)
       .then((data) => {
-        console.log(data.data.contents);
         setSearchResults(data.data.contents);
         setLoading(false);
       })
@@ -42,8 +42,10 @@ export const AppContext = (props) => {
         selectedCategory,
         mobileMenu,
         modal,
-        users,
-        setUsers,
+        user,
+        userLogin, 
+        setUserLogin,
+        setUser,
         setModal,
         setLoading,
         setSelectedCategory,

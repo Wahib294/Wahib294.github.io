@@ -5,6 +5,7 @@ import Feed from "./components/Feed";
 import SearchResult from "./components/SearchResult";
 import VideoDetails from "./components/VideoDetails";
 import { AppContext } from "./context/contextAPI";
+import Playlist from "./components/Playlist";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
               <Route path="/" exact element={<Feed />} />
               <Route path="/search/:searchQuery" element={<SearchResult />} />
               <Route path="/video/:id" element={<VideoDetails />} />
+              <Route path="/playlist" element={<Playlist />} />
             </Routes>
           </div>
         </BrowserRouter>

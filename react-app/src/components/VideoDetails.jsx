@@ -16,7 +16,7 @@ const VideoDetails = () => {
   const { id } = useParams();
   const { setLoading } = useContext(Context);
   const { setSelectedCategory } = useContext(Context);
-  const {modal} = useContext(Context);
+  const { userLogin, modal } = useContext(Context);
 
   useEffect(() => {
     setSelectedCategory("NEW");
@@ -97,11 +97,16 @@ const VideoDetails = () => {
               <div className="flex text-white mt-4 md:mt-0">
                 <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15]">
                   <AiOutlineLike className="text-xl text-white mr-2" />
-                  {`${abbreviateNumber(video?.stats?.views, 2)} Likes`}
+                  {`${abbreviateNumber(video?.stats?.likes, 2)} Likes`}
                 </div>
                 <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15] ml-4">
                   {`${abbreviateNumber(video?.stats?.views, 2)} Views`}
                 </div>
+                {userLogin && (
+                  <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15] ml-4">
+                    <button>Add to Playlist</button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -113,9 +118,7 @@ const VideoDetails = () => {
           </div>
         </div>
       </div>
-      {modal && (
-        <Login/>
-      )}
+      {modal && <Login />}
     </>
   );
 };

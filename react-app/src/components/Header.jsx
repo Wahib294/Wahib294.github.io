@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import ytLogo from "../images/yt-logo.png";
 import ytLogoMobile from "../images/yt-logo-mobile.png";
@@ -16,8 +16,16 @@ import Loader from "../shared/loader";
 const Header = () => {
   const [searchQuery, setsearchQuery] = useState("");
 
-  const { loading, mobileMenu, setMobileMenu, modal, setModal } =
-    useContext(Context);
+  const {
+    setUserLogin,
+    setUser,
+    userLogin,
+    loading,
+    mobileMenu,
+    setMobileMenu,
+    modal,
+    setModal,
+  } = useContext(Context);
 
   const navigate = useNavigate();
   const toggleModal = () => {
@@ -34,9 +42,10 @@ const Header = () => {
   const mobileMenuToggle = () => {
     setMobileMenu(!mobileMenu);
   };
-
-  const { pathname } = useLocation();
-  const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
+  const toggleuser = () => {
+    setUserLogin(!userLogin);
+    setUser({});
+  };
 
   return (
     <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
@@ -89,9 +98,15 @@ const Header = () => {
             <FiBell className="text-white text-xl cursor-pointer" />
           </div>
         </div>
-        <div className="flex text-white h-8 w-full md:ml-3">
-          <button onClick={toggleModal}>Log In</button>
-        </div>
+        {!userLogin ? (
+          <div className="flex text-white h-8 w-full md:ml-3">
+            <button onClick={toggleModal}>Log In</button>
+          </div>
+        ) : (
+          <div className="flex text-white h-8 w-full md:ml-3">
+            <button onClick={toggleuser}>Log Out</button>
+          </div>
+        )}
       </div>
     </div>
   );

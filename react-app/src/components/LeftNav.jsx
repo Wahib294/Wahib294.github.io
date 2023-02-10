@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../context/contextAPI";
 import LeftNavMenuItem from "./LeftNavMenuItem";
-import { categories } from "../utils/constants";
-import { hover } from "@testing-library/user-event/dist/hover";
+import { categories2, categories1 } from "../utils/constants";
 
 const LeftNav = () => {
-  const { selectedCategory, setSelectedCategory, mobileMenu } =
+  const { userLogin, selectedCategory, setSelectedCategory, mobileMenu } =
     useContext(Context);
+  let categories = [];
   const navigate = useNavigate();
   const clickHandler = (name, type) => {
     switch (type) {
@@ -22,6 +22,11 @@ const LeftNav = () => {
         break;
     }
   };
+  if (userLogin) {
+    categories = categories2;
+  } else {
+    categories = categories1;
+  }
   return (
     <div
       className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-[0] transition-all ${
@@ -36,8 +41,13 @@ const LeftNav = () => {
                 text={item.name}
                 icon={item.icon}
                 action={() => {
-                  clickHandler(item.name, item.type);
-                  navigate("/");
+                  if (item.name === "Playlist") {
+                    // setSelectedCategory(item.name);
+                    navigate("/playlist");
+                  } else {
+                    clickHandler(item.name, item.type);
+                    navigate("/");
+                  }
                 }}
                 className={`${
                   selectedCategory === item.name ? "bg-white/[0.15]" : ""
