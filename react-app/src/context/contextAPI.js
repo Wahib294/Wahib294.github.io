@@ -9,6 +9,8 @@ export const AppContext = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Home");
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     if (selectedCategory === "Home") {
@@ -39,6 +41,10 @@ export const AppContext = (props) => {
         searchResults,
         selectedCategory,
         mobileMenu,
+        modal,
+        users,
+        setUsers,
+        setModal,
         setLoading,
         setSelectedCategory,
         setMobileMenu,

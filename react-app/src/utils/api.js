@@ -15,3 +15,16 @@ export const fetchDatafromApi = async (url) => {
   const data = await axios.get(`${BASE_URL}/${url}`, options);
   return data;
 };
+export const fetchUsers = async () => {
+  const user = await axios.get(
+    "https://63e64d4fc8839ccc28557489.mockapi.io/users"
+  );
+  return user.data;
+};
+
+export const userlogin = () => {
+  fetchUsers().then((data) => {
+    console.log(data);
+    console.log("SIGN IN PRESSED");
+  });
+};

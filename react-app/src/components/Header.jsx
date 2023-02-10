@@ -16,10 +16,13 @@ import Loader from "../shared/loader";
 const Header = () => {
   const [searchQuery, setsearchQuery] = useState("");
 
-  const { loading, mobileMenu, setMobileMenu } = useContext(Context);
+  const { loading, mobileMenu, setMobileMenu, modal, setModal } =
+    useContext(Context);
 
   const navigate = useNavigate();
-
+  const toggleModal = () => {
+    setModal(!modal);
+  };
   const searchQueryHandler = (e) => {
     if (
       searchQuery?.length > 0 &&
@@ -86,8 +89,8 @@ const Header = () => {
             <FiBell className="text-white text-xl cursor-pointer" />
           </div>
         </div>
-        <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-          <img src="https://xsgames.co/randomusers/assets/avatars/male/67.jpg" />
+        <div className="flex text-white h-8 w-full md:ml-3">
+          <button onClick={toggleModal}>Log In</button>
         </div>
       </div>
     </div>
