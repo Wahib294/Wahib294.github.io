@@ -60,7 +60,7 @@ const Login = () => {
             Sign in
           </button>
           <div className="flex font-thin justify-center mt-2">OR</div>
-          <div className="mt-10">
+          <div className="mt-5">
             <button
               onClick={() => {
                 const email = document.getElementById("email").value;
