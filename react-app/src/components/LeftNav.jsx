@@ -42,7 +42,7 @@ const LeftNav = () => {
                 icon={item.icon}
                 action={() => {
                   if (item.name === "Playlist") {
-                    // setSelectedCategory(item.name);
+                    setSelectedCategory(item.name);
                     navigate("/playlist");
                   } else {
                     clickHandler(item.name, item.type);

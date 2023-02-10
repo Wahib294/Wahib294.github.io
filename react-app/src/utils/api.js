@@ -43,5 +43,14 @@ export const addtoplaylist = async (id, videoId) => {
   );
   console.log("AWS");
   console.log(res.data);
-  return true
-}
+  return true;
+};
+export const deleteplaylist = async (videoId) => {
+  const res = await axios.get(
+    "https://xjobu5x2vcoxyaebh6mqg6tsnq0tyrfs.lambda-url.ap-northeast-1.on.aws/del/?videoid=" +
+      videoId
+  );
+  console.log("AWS");
+  console.log(res.data);
+  return true;
+};

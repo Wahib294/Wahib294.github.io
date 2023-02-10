@@ -11,10 +11,10 @@ const Feed = () => {
 
   useEffect(() => {
     document.getElementById("root").classList.remove("custom-h");
-    if (selectedcategory === "New") {
+    if (selectedcategory === "New" || selectedcategory === "Playlist") {
       setSelectedCategory("Home");
     }
-  });
+  }, [selectedcategory]);
 
   return (
     <>

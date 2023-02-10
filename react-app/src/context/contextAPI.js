@@ -16,6 +16,8 @@ export const AppContext = (props) => {
   useEffect(() => {
     if (selectedCategory === "Home") {
       fetchSelectedCategoryData("New");
+    } else if (selectedCategory === "Playlist") {
+      console.log("Playlist");
     } else {
       fetchSelectedCategoryData(selectedCategory);
     }
@@ -43,7 +45,7 @@ export const AppContext = (props) => {
         mobileMenu,
         modal,
         user,
-        userLogin, 
+        userLogin,
         setUserLogin,
         setUser,
         setModal,

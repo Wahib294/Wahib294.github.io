@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchDatafromApi, fetchPlaylist } from "../utils/api";
 import { Context } from "../context/contextAPI";
 import LeftNav from "./LeftNav";
-import SearchResultVideoCard from "./SearchResultVideoCard";
+import PlaylistResult from "./PlaylistResult";
 import Login from "./Login";
 
 const Playlist = () => {
@@ -38,7 +38,7 @@ const Playlist = () => {
           <div className="grid grid-cols-1 gap-2 p-5">
             {video &&
               video?.map((item, index) => {
-                return <SearchResultVideoCard key={index} video={item} />;
+                return <PlaylistResult key={index} video={item} />;
               })}
           </div>
         </div>
