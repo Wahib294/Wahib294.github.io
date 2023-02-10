@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../context/contextAPI";
-import { fetchUsers } from "../utils/api";
+import { fetchUsers, userSign } from "../utils/api";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const { setUser, modal, setModal } = useContext(Context);
@@ -65,7 +65,10 @@ const Login = () => {
               onClick={() => {
                 const email = document.getElementById("email").value;
                 const password = document.getElementById("password").value;
-                Userlogin(email, password);
+                if (userSign(email, password)) {
+                  setModal(false);
+                  alert("Signed Up Successfully");
+                }
               }}
               className="inline-block mb-4 px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
               data-mdb-ripple="true"

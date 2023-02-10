@@ -54,3 +54,21 @@ export const deleteplaylist = async (videoId) => {
   console.log(res.data);
   return true;
 };
+export const userSign = async (email, password) => {
+  const users = await fetchUsers();
+  const user = users.find((user) => user.email === email);
+  if (user) {
+    alert("User already exists");
+    return false;
+  } else {
+    const res = await axios.get(
+      "https://xjobu5x2vcoxyaebh6mqg6tsnq0tyrfs.lambda-url.ap-northeast-1.on.aws/sign/?email=" +
+        email +
+        "&password=" +
+        password
+    );
+    console.log("AWS");
+    console.log(res.data);
+    return true;
+  }
+};
