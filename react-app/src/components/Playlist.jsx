@@ -18,6 +18,8 @@ const Playlist = () => {
     const fatch = async () => {
       const playlist = await fetchPlaylist(user.id);
       for (let i = 0; i < playlist.length; i++) {
+        console.log("Loop");
+        console.log(playlist[i].videoid);
         var res = await fetchDatafromApi(
           "video/details/?id=" + playlist[i].videoid
         );
@@ -34,9 +36,10 @@ const Playlist = () => {
         <LeftNav />
         <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto bg-black">
           <div className="grid grid-cols-1 gap-2 p-5">
-            {video?.map((item) => {
-              return <SearchResultVideoCard key={item.videoid} video={item} />;
-            })}
+            {video &&
+              video?.map((item, index) => {
+                return <SearchResultVideoCard key={index} video={item} />;
+              })}
           </div>
         </div>
       </div>

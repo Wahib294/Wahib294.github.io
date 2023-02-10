@@ -5,7 +5,7 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 import { AiOutlineLike } from "react-icons/ai";
 import { abbreviateNumber } from "js-abbreviation-number";
 import LeftNav from "./LeftNav";
-import { fetchDatafromApi } from "../utils/api";
+import { fetchDatafromApi, addtoplaylist } from "../utils/api";
 import { Context } from "../context/contextAPI";
 import SuggestionVideoCard from "./SuggestionVideoCard";
 import Login from "./Login";
@@ -16,7 +16,7 @@ const VideoDetails = () => {
   const { id } = useParams();
   const { setLoading } = useContext(Context);
   const { setSelectedCategory } = useContext(Context);
-  const { userLogin, modal } = useContext(Context);
+  const { user, userLogin, modal } = useContext(Context);
 
   useEffect(() => {
     setSelectedCategory("NEW");
@@ -51,6 +51,11 @@ const VideoDetails = () => {
         console.log(err);
         setLoading(false);
       });
+  };
+
+  const addtolist = () => {
+    addtoplaylist(user.id, id);
+    alert("Added to playlist");
   };
 
   return (
@@ -104,7 +109,7 @@ const VideoDetails = () => {
                 </div>
                 {userLogin && (
                   <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15] ml-4">
-                    <button>Add to Playlist</button>
+                    <button onClick={addtolist}>Add to Playlist</button>
                   </div>
                 )}
               </div>

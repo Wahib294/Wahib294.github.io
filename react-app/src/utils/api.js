@@ -33,3 +33,15 @@ export const fetchPlaylist = async (id) => {
   console.log(playlist.data);
   return playlist.data;
 };
+
+export const addtoplaylist = async (id, videoId) => {
+  const res = await axios.get(
+    "https://xjobu5x2vcoxyaebh6mqg6tsnq0tyrfs.lambda-url.ap-northeast-1.on.aws/add/?userid=" +
+      id +
+      "&videoid=" +
+      videoId
+  );
+  console.log("AWS");
+  console.log(res.data);
+  return true
+}
