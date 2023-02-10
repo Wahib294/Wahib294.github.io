@@ -68,7 +68,7 @@ const PlaylistResult = ({ video }) => {
               </div>
             </div>
           </Link>
-          <div className="flex w-[200px] items-center justify-center h-11 px-6 rounded-3xl bg-red-600 text-white ml-4">
+          <div className="flex text-sm xt w-[200px] items-center justify-center h-11 px-6 rounded-3xl bg-red-600 text-white ml-4">
             <button onClick={deletefromlist}>Remove From Playlist</button>
           </div>
         </>
