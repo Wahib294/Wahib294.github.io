@@ -60,10 +60,10 @@ const VideoDetails = () => {
 
   return (
     <>
-      <div className="flex justice-center flex-row h-[calc(100%-56px)] bg-black">
+      <div className="flex flex-row h-[calc(100%-56px)] bg-black">
         <LeftNav />
         <div className="w-full max-w-[1280px] flex flex-col lg:flex-row lg:ml-[150px]">
-          <div className="flex flex-col lg:w-[calc(100%-450px)] xl:w-[calc(100%-400px)] px-0 py-3 lg:py-6 overflow-y-auto">
+          <div className="flex flex-col lg:ml-[-60px] lg:w-[calc(100%-450px)] xl:w-[calc(100%-400px)] px-0 py-3 lg:py-6 overflow-y-auto">
             <div className="h-[200px] md:h-[400px] lg:h-[400px] xl:h-[550px] ml-[-16px] lg:ml-0 mr-[-16px] lg:mr-0">
               <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${id}`}
@@ -115,7 +115,7 @@ const VideoDetails = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col py-6 px-4 overflow-y-auto scrollbar-hide lg:w-[350px] xl:w-[400px]">
+          <div className="flex flex-col lg:ml-[160px] lg:mr-[-160px] py-6 px-4 overflow-y-auto scrollbar-hide lg:w-[350px] xl:w-[400px]">
             {relatedVideos?.contents?.map((item, index) => {
               if (item?.type !== "video") return false;
               return <SuggestionVideoCard key={index} video={item?.video} />;
